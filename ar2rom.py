@@ -1,6 +1,9 @@
 import unittest
 
 conversion_map = (
+    ('l', 50),
+    ('il',49),
+    ('xl', 40),
     ('x', 10),
     ('ix', 9),
     ('v', 5),
@@ -44,6 +47,18 @@ class Tests(unittest.TestCase):
 
     def test_21_to_xxi(self):
         self.assertEqual(ar2rom(21), 'xxi')
+
+    def test_50_to_l(self):
+        self.assertEqual(ar2rom(50), 'l')
+
+    def test_40_to_l(self):
+        self.assertEqual(ar2rom(40), 'xl')
+
+    def test_49_to_l(self):
+        self.assertEqual(ar2rom(49), 'il')
+
+    def test_51_to_l(self):
+        self.assertEqual(ar2rom(51), 'li')        
 
 if __name__ == "__main__":
     unittest.main()
